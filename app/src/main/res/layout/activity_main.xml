@@ -121,6 +121,16 @@
         android:id="@+id/btn_base64_dec"
         />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWrite"
+        android:layout_marginTop="10dp"
+        android:text="@string/app_random_dec"
+        android:id="@+id/btn_random_dec"
+        />
+
 
     </LinearLayout>
 

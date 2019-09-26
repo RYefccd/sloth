@@ -17,5 +17,6 @@
     <string name="app_base64_enc">Base64加密</string>
     <string name="app_base64_dec">Base64解密</string>
 
+    <string name="app_random_dec">随机数生成</string>
 
 </resources>

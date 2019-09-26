@@ -63,11 +63,11 @@ Java_com_bulinbulin_security_SecurityUtil_createKeyPair(JNIEnv *env, jobject ins
 
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_bulinbulin_security_SecurityUtil_sm2Encrypt(JNIEnv *env, jobject instance, jstring input_,jbyteArray key_) {
+Java_com_bulinbulin_security_SecurityUtil_sm2Encrypt(JNIEnv *env, jobject instance, jbyteArray input_,jbyteArray key_) {
 
-    const char *input = (*env)->GetStringUTFChars(env,input_, 0);
+    const char *input = (*env)->GetByteArrayElements(env,input_, 0);
 
-    int input_len = (*env)->GetStringLength(env,input_);
+    int input_len = (*env)->GetArrayLength(env,input_);
 
     const char *key  = (*env)->GetByteArrayElements(env,key_, 0);
 
@@ -468,4 +468,27 @@ Java_com_bulinbulin_security_SecurityUtil_base64Decode(JNIEnv *env, jobject inst
     }
     (*env)->ReleaseByteArrayElements(env,data_, unicodeDataChar, 0);
     return retByte;
+}
+
+
+
+JNIEXPORT jstring JNICALL
+Java_com_bulinbulin_security_SecurityUtil_random(JNIEnv *env, jobject instance, jint len) {
+
+
+    BIGNUM *bn;
+
+    bn = BN_new(); //生成一个BIGNUM结构
+    int top = -1;
+    int bottom = 1;
+
+    BN_rand(bn, len*8, top, bottom); //生成指定bits的随机数
+
+    char *a = BN_bn2hex(bn); //转化成16进制字符串
+
+    //puts(a);
+
+    BN_free(bn); //释放BIGNUM结构
+
+    return (*env)->NewStringUTF(env, a);
 }

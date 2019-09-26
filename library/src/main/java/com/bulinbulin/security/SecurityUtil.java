@@ -18,7 +18,8 @@ public class SecurityUtil {
      * @param key   加密的公钥，长度为64字节
      * @return      加密后经过hex编码后返回
      */
-    public native byte[] sm2Encrypt(String data, byte[] key);
+    public native byte[] sm2Encrypt(byte[] data, byte[] key);
+
 
     /**
      * sm2加密算法，以C1C2C3拼接传入，采用推荐曲线
@@ -94,6 +95,13 @@ public class SecurityUtil {
      */
     public native byte[] base64Decode(byte[] data);
 
+
+    /**
+     * 生成一个指定长度的随机数
+     * @param len 生成随机数的长度
+     * @return 生成指定长度随机数的字符串
+     */
+    public native String random(int len);
 
 
 

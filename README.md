@@ -42,7 +42,7 @@ public native KeyPairInfo createKeyPair();
  * @param key   加密的公钥，长度为64字节
  * @return      加密后经过hex编码后返回
  */
-public native byte[] sm2Encrypt(String data, byte[] key);
+public native byte[] sm2Encrypt(byte[] data, byte[] key);
 ```
 
 ```

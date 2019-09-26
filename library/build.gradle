@@ -37,7 +37,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    compileOnly 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -49,7 +49,7 @@ publish {
     repoName = 'bulin'//要传到的maven的名字。你可能有多个maven，要传哪个写哪个。
     groupId = 'com.bulinbulin'//jcenter上的路径
     artifactId = 'sloth'//项目名称
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.0.2'//版本号
     desc = 'the first time uploading'//描述，不重要
     website = 'https://github.com/tobulinbulin/sloth'//网站，不重要；尽量模拟github上的地址
 }
