@@ -1,6 +1,9 @@
 # sloth【树懒-闪电】
 跨平台安全以及高性能加解密集合库，包含国密(sm2,sm3,sm4),hex,md5,base64 [API持续更新中..]
 
+由于VPN登录原因账号被Google锁住，所以迁移本项目到新的账号，地址如下
+[sloth](https://github.com/smallbuer/sloth)
+
 ### 简介
 sloth是基于开源跨平台加解密库openssl实现的一系列加解密算法API，本项目工程适用于Android项目,兼容arm,x86平台；
 最低版本21，Android5.1
