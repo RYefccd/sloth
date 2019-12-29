@@ -3,6 +3,9 @@
 //
 #include <jni.h>
 
+
+
+
 JNIEXPORT jobject JNICALL
 Java_com_bulinbulin_security_SecurityUtil_createKeyPair(JNIEnv *env, jobject instance);
 
@@ -14,8 +17,17 @@ JNIEXPORT jbyteArray JNICALL
 Java_com_bulinbulin_security_SecurityUtil_sm2Decrypt(JNIEnv *env, jobject instance, jstring test_,
         jbyteArray key_);
 
+JNIEXPORT jbyteArray JNICALL
+Java_com_bulinbulin_security_SecurityUtil_sm2EncryptOld(JNIEnv *env, jobject instance, jbyteArray test_,
+                                                     jbyteArray key_);
+
+JNIEXPORT jbyteArray JNICALL
+Java_com_bulinbulin_security_SecurityUtil_sm2DecryptOld(JNIEnv *env, jobject instance, jstring test_,
+                                                     jbyteArray key_);
+
+
 JNIEXPORT jstring JNICALL
-Java_com_bulinbulin_security_SecurityUtil_sm3(JNIEnv *env, jobject instance,jstring srcjStr);
+Java_com_bulinbulin_security_SecurityUtil_sm3(JNIEnv *env, jobject instance,jbyteArray srcjStr);
 
 
 JNIEXPORT jstring JNICALL
